@@ -4,6 +4,10 @@
   "description": "Simulates human-like typing in VS Code based on an AI-generated script",
   "version": "0.0.1",
   "publisher": "qoneqo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qoneqo/ai-typing-simulator.git"
+  },
   "engines": {
     "vscode": "^1.49.0"
   },
