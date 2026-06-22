@@ -46,7 +46,7 @@ We have already verified the packaging setup, but to rebuild a clean `.vsix` arc
    ```bash
    npx @vscode/vsce package --allow-missing-repository
    ```
-   This generates `ai-typing-simulator-0.0.1.vsix` in the root of the folder.
+   This generates `ai-typing-simulator-0.0.2.vsix` in the root of the folder.
 
 ---
 
@@ -73,7 +73,7 @@ If you prefer not to use the command line for publishing, you can upload the pac
 1. Go to the [Visual Studio Marketplace Management Portal](https://marketplace.visualstudio.com/manage).
 2. Select your publisher.
 3. Click **New Extension** -> **Visual Studio Code**.
-4. Drag and drop the generated `ai-typing-simulator-0.0.1.vsix` file.
+4. Drag and drop the generated `ai-typing-simulator-0.0.2.vsix` file.
 5. Click **Upload**.
 
 ---
@@ -82,5 +82,5 @@ If you prefer not to use the command line for publishing, you can upload the pac
 You can install the `.vsix` directly into your VS Code (or Antigravity IDE) to test it before publishing:
 1. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 2. Search for `Extensions: Install from VSIX...`
-3. Browse and select the file `ai-typing-simulator-0.0.1.vsix`.
+3. Browse and select the file `ai-typing-simulator-0.0.2.vsix`.
 4. Reload the window to activate it.
