@@ -3,7 +3,7 @@
   "displayName": "AI Typing Simulator",
   "description": "Simulates human-like typing in VS Code based on an AI-generated script",
   "version": "0.0.1",
-  "publisher": "your-publisher-id",
+  "publisher": "qoneqo",
   "engines": {
     "vscode": "^1.49.0"
   },
