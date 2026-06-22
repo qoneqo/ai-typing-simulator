@@ -1,0 +1,27 @@
+{
+  "name": "ai-typing-simulator",
+  "displayName": "AI Typing Simulator",
+  "description": "Simulates human-like typing in VS Code based on an AI-generated script",
+  "version": "0.0.1",
+  "publisher": "your-publisher-id",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ai-typing-simulator.runScript",
+        "title": "AI Typing Simulator: Run Simulation Script"
+      },
+      {
+        "command": "ai-typing-simulator.stopScript",
+        "title": "AI Typing Simulator: Stop Simulation"
+      }
+    ]
+  }
+}

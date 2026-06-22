@@ -1,0 +1,11 @@
+.git
+.gitignore
+.vscodeignore
+ai-typing-simulator-*.vsix
+node_modules/**
+src/**
+out/**
+tsconfig.json
+webpack.config.js
+yarn.lock
+package-lock.json
