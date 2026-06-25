@@ -2,11 +2,16 @@
   "name": "ai-typing-simulator",
   "displayName": "AI Typing Simulator",
   "description": "Simulates human-like typing in VS Code based on an AI-generated script",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "qoneqo",
   "repository": {
     "type": "git",
     "url": "https://github.com/qoneqo/ai-typing-simulator.git"
+  },
+  "icon": "images/logo.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.49.0"

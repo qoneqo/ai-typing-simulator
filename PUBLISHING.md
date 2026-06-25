@@ -36,7 +36,7 @@ A publisher is a unique identifier required for every extension on the Marketpla
 ---
 
 ## Step 3: Package the Extension locally
-We have already verified the packaging setup, but to rebuild a clean `.vsix` archive locally:
+To rebuild a clean `.vsix` archive locally:
 
 1. Open your terminal in the extension folder:
    ```bash
@@ -44,37 +44,52 @@ We have already verified the packaging setup, but to rebuild a clean `.vsix` arc
    ```
 2. Build the `.vsix` file:
    ```bash
-   npx @vscode/vsce package --allow-missing-repository
+   npx @vscode/vsce package
    ```
-   This generates `ai-typing-simulator-0.0.2.vsix` in the root of the folder.
+   This generates `ai-typing-simulator-0.0.3.vsix` in the root of the folder.
 
 ---
 
-## Step 4: Login and Publish using VSCE CLI
+## Step 4: Publish to VS Code Marketplace (marketplace.visualstudio.com)
 
 ### A. Login to your Publisher Profile
-In your terminal, run the login command using your publisher ID:
+In your terminal, run the login command using your publisher ID (defined in `package.json`):
 ```bash
 npx @vscode/vsce login <your-publisher-id>
 ```
-*It will prompt you to enter the **Personal Access Token** you copied in Step 1. Paste it and press Enter.*
+*It will prompt you to enter the **Personal Access Token (PAT)** you copied in Step 1. Paste it and press Enter.*
 
 ### B. Publish the Extension
 Once logged in, publish the extension directly to the Marketplace:
 ```bash
-npx @vscode/vsce publish --allow-missing-repository
+npx @vscode/vsce publish
 ```
-*Note: The Marketplace can take a few minutes to verify and index your extension before it appears in searches.*
+*Note: You can also manually upload the generated `ai-typing-simulator-0.0.3.vsix` by logging into the [Marketplace Management Portal](https://marketplace.visualstudio.com/manage) and dragging/dropping the file under your publisher.*
 
 ---
 
-## Alternative: Publishing via the Web Portal
-If you prefer not to use the command line for publishing, you can upload the packaged file manually:
-1. Go to the [Visual Studio Marketplace Management Portal](https://marketplace.visualstudio.com/manage).
-2. Select your publisher.
-3. Click **New Extension** -> **Visual Studio Code**.
-4. Drag and drop the generated `ai-typing-simulator-0.0.2.vsix` file.
-5. Click **Upload**.
+## Step 5: Publish to Open VSX Registry (open-vsx.org)
+
+The Open VSX registry is an open-source alternative registry for VS Code extensions used by VSCodium, Gitpod, Eclipse Theia, and other editors.
+
+### A. Create an Account and Namespace
+1. Go to [open-vsx.org](https://open-vsx.org/) and sign in using your GitHub account.
+2. Generate an **Access Token** from your user profile settings page.
+3. If this is your first time publishing, register a namespace matching your publisher ID in `package.json`:
+   ```bash
+   npx ovsx create-namespace <your-publisher-id> -p <your-access-token>
+   ```
+
+### B. Publish the Extension
+Run the following command to publish your compiled `.vsix` file:
+```bash
+npx ovsx publish ai-typing-simulator-0.0.3.vsix -p <your-access-token>
+```
+*Tip: You can set the token as an environment variable to avoid typing it:*
+```bash
+export OVSX_TOKEN="your-access-token"
+npx ovsx publish ai-typing-simulator-0.0.3.vsix
+```
 
 ---
 
@@ -82,5 +97,5 @@ If you prefer not to use the command line for publishing, you can upload the pac
 You can install the `.vsix` directly into your VS Code (or Antigravity IDE) to test it before publishing:
 1. In VS Code, open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
 2. Search for `Extensions: Install from VSIX...`
-3. Browse and select the file `ai-typing-simulator-0.0.2.vsix`.
+3. Browse and select the file `ai-typing-simulator-0.0.3.vsix`.
 4. Reload the window to activate it.
